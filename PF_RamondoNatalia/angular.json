@@ -91,9 +91,12 @@
             ],
             "styles": [
               "src/styles.css", 
-            ],"PF_RamondoNatalia/node_modules/bootstrap/dist/css/bootstrap.css"
+              "PF_RamondoNatalia/node_modules/bootstrap/dist/css/bootstrap.css"
+            ],
             "scripts": [
               "PF_RamondoNatalia/node_modules/bootstrap/dist/js/bootstrap.js"
+              "PF_RamondoNatalia/node_modules/jquery.min.js"
+              "PF_RamondoNatalia/@popperjs/core/dist/umd/popper.min.js"
             ]
           }
         }
