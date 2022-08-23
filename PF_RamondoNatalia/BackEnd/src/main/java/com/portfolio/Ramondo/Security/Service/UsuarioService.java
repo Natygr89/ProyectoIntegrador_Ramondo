@@ -1,7 +1,7 @@
 package com.portfolio.Ramondo.Security.Service;
 
 import com.portfolio.Ramondo.Security.Entity.Usuario;
-import com.portfolio.Ramondo.Security.Repository.IUsuarioRepository;
+import com.portfolio.Ramondo.Security.Repository.iUsuarioRepository;
 import java.util.Optional;
 import javax.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -10,21 +10,23 @@ import org.springframework.stereotype.Service;
 @Service
 @Transactional
 public class UsuarioService {
+
     @Autowired
-    IUsuarioRepository iusuarioRepository;
-    
-    public Optional<Usuario> getByNombre(String nombreUsuario){
+    iUsuarioRepository iusuarioRepository;
+
+    public Optional<Usuario> getByNombreUsuario(String nombreUsuario) {
         return iusuarioRepository.findByNombreUsuario(nombreUsuario);
     }
-    public boolean existsByNombreUsuario(String nombreUsuario){
+
+    public boolean existsByNombreUsuario(String nombreUsuario) {
         return iusuarioRepository.existsByNombreUsuario(nombreUsuario);
     }
-    public boolean existsByEmail(String email){
+
+    public boolean existsByEmail(String email) {
         return iusuarioRepository.existsByEmail(email);
     }
-    public void save(Usuario usuario){
+
+    public void save(Usuario usuario) {
         iusuarioRepository.save(usuario);
     }
-
 }
-

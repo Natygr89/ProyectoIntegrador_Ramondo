@@ -66,13 +66,4 @@ div{
         }       
 }
 
-/*etiqueta acerca*/
-@media (min-width:576px) {
-    #acerca{
-        font-family:Tahoma;
-        font-size: 25px;
-        margin-top: 5%;
-        margin-left: 250px;  
-    }
-    }
 
