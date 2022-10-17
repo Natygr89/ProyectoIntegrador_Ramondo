@@ -23,20 +23,20 @@ public class PersonaController {
     IPersonaService ipersonaService;
 
     @GetMapping("personas/traer")
-    public List<Persona> getPersona(){
+    public List<Persona> getPersona() {
         return ipersonaService.getPersona();
     }
 
     @PreAuthorize("hasRole('ADMIN')")
     @PostMapping("/personas/crear")
-    public String createPersona(@RequestBody Persona persona){
+    public String createPersona(@RequestBody Persona persona) {
         ipersonaService.savePersona(persona);
         return "El usuario fue creado correctamente";
     }
 
     @PreAuthorize("hasRole('ADMIN')")
     @DeleteMapping("/personas/borrar/{id}")
-    public String deletePersona(@PathVariable Long id){
+    public String deletePersona(@PathVariable Long id) {
         ipersonaService.deletePersona(id);
         return "El usuario fue eliminado correctamente";
     }
@@ -46,7 +46,7 @@ public class PersonaController {
     public Persona editPersona(@PathVariable Long id,
             @RequestParam("nombre") String nuevoNombre,
             @RequestParam("apellido") String nuevoApellido,
-            @RequestParam("img") String nuevoImg){
+            @RequestParam("img") String nuevoImg) {
         Persona persona = ipersonaService.findPersona(id);
 
         persona.setNombre(nuevoNombre);
@@ -56,10 +56,10 @@ public class PersonaController {
         ipersonaService.savePersona(persona);
         return persona;
     }
-    
+
     @GetMapping("personas/traer/perfil")
-    public Persona findPersona(){
-        return ipersonaService.findPersona((long)1);
+    public Persona findPersona() {
+        return ipersonaService.findPersona((long) 1);
     }
-   
+
 }
